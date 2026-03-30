@@ -11,12 +11,10 @@ class Products:
 
 class Digital_Products(Products):
     def __init__(self, name, price, stock_quantity, file_size):
-        # super() tells the parent class to handle name, price, and stock
         super().__init__(name, price, stock_quantity)
         self.file_size = file_size
 
     def get_details(self):
-        # Now we add the file size to the string!
         return f"{self.name} ({self.file_size}MB) costs {self.price}."
 
 item1 = Products("Shirt", 1500, 20)
@@ -47,7 +45,6 @@ while True:
     action = input("\nWhat would you like to do? (view / buy / exit): ").lower()
 
     if action == "view":
-        # Task: Loop through inventory and print every item's get_details()
         for things in inventory:
             print(things.get_details())
         
